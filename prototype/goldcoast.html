@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>골드코스트 - Voyage Vogue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gray-800">Voyage Vogue</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900">홈</a>
+                    <a href="about.html" class="text-gray-700 hover:text-gray-900">소개</a>
+                    <a href="destinations.html" class="text-gray-700 hover:text-gray-900">여행지</a>
+                    <a href="collections.html" class="text-gray-700 hover:text-gray-900">컬렉션</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="search.html" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="login.html" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="cart.html" class="text-gray-700 hover:text-gray-900 relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs cart-count">0</span>
+                    </a>
+                    <button class="md:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700">홈</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700">소개</a>
+                <a href="destinations.html" class="block px-3 py-2 text-gray-700">여행지</a>
+                <a href="collections.html" class="block px-3 py-2 text-gray-700">컬렉션</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 md:h-[500px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600" alt="Gold Coast" class="w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white px-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">GOLD COAST</h1>
+                <p class="text-lg md:text-2xl">호주의 서핑 파라다이스와 끝없는 해변</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="bg-white py-4 shadow-sm sticky top-16 z-40">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap gap-4 items-center justify-between">
+                <div class="flex flex-wrap gap-2">
+                    <button class="px-4 py-2 bg-gray-900 text-white rounded-full text-sm">전체</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm hover:bg-gray-300">서핑웨어</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm hover:bg-gray-300">비치웨어</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm hover:bg-gray-300">테마파크</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm hover:bg-gray-300">아웃도어</button>
+                </div>
+                <select class="px-4 py-2 border rounded-lg text-sm">
+                    <option>인기순</option>
+                    <option>최신순</option>
+                    <option>가격 낮은순</option>
+                    <option>가격 높은순</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc1')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400" alt="Surf wear" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        <span class="absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 text-xs rounded">SURF</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">프로 서핑 웻수트</h3>
+                    <p class="text-gray-600 text-xs mb-2">서퍼스 파라다이스 비치</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩289,000</span>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc2')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?w=400" alt="Beach outfit" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">오지 비치 세트</h3>
+                    <p class="text-gray-600 text-xs mb-2">브로드비치 선탠</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩139,000</span>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc3')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400" alt="Rashguard" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        <span class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 text-xs rounded">UV PROTECT</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">UV 차단 래쉬가드</h3>
+                    <p class="text-gray-600 text-xs mb-2">버레이 헤드 비치</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩89,000</span>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc4')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?w=400" alt="Theme park" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">테마파크 캐주얼 세트</h3>
+                    <p class="text-gray-600 text-xs mb-2">드림월드 & 씨월드</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩119,000</span>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc5')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400" alt="Bucket hat" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        <span class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded">AUSSIE</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">오지 버킷햇</h3>
+                    <p class="text-gray-600 text-xs mb-2">스프링브룩 국립공원</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩69,000</span>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc6')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1603217192638-d31c282004ae?w=400" alt="Board shorts" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">퀵실버 보드숏</h3>
+                    <p class="text-gray-600 text-xs mb-2">메인 비치 서핑</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩99,000</span>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc7')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=400" alt="Flip flops" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">리프 플립플롭</h3>
+                    <p class="text-gray-600 text-xs mb-2">비치 워킹 필수템</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩59,000</span>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="group cursor-pointer" onclick="goToProduct('gc8')">
+                    <div class="relative overflow-hidden rounded-lg mb-3">
+                        <img src="https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=400" alt="Sunglasses" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        <span class="absolute top-2 left-2 bg-orange-500 text-white px-2 py-1 text-xs rounded">POLARIZED</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">편광 서핑 선글라스</h3>
+                    <p class="text-gray-600 text-xs mb-2">스카이포인트 전망대</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-bold">₩189,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition">
+                    더 보기
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Tips -->
+    <section class="py-16 bg-gradient-to-b from-yellow-50 to-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">골드코스트 스타일 팁</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1527004760902-481c0e027825?w=400" alt="Style tip" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="font-semibold mb-2">서퍼스 파라다이스</h3>
+                    <p class="text-gray-600 text-sm">프로 서퍼들의 비치 스타일</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=400" alt="Style tip" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="font-semibold mb-2">힌터랜드 열대우림</h3>
+                    <p class="text-gray-600 text-sm">자연 탐험 아웃도어 룩</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400" alt="Style tip" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="font-semibold mb-2">테마파크 어드벤처</h3>
+                    <p class="text-gray-600 text-sm">액티브한 하루를 위한 스타일</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-semibold mb-4">회사</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">회사 소개</a></li>
+                        <li><a href="careers.html" class="text-gray-400 hover:text-white">채용</a></li>
+                        <li><a href="press.html" class="text-gray-400 hover:text-white">프레스</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">고객 서비스</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">문의하기</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="shipping.html" class="text-gray-400 hover:text-white">배송 정보</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">소셜 미디어</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Voyage Vogue</h4>
+                    <p class="text-gray-400 text-sm">여행지에 어울리는 완벽한 스타일을 찾아보세요</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 Voyage Vogue. All rights reserved.</p>
+                <p class="text-sm mt-2">대표자: 이지민 | 사업자등록번호: 315-46-00875</p>
+                <p class="text-sm">개인정보보호 책임자: 전민성 | 이메일: privacy@voyagevogue.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
