@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 - Voyage Vogue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gray-800">Voyage Vogue</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900">홈</a>
+                    <a href="about.html" class="text-gray-700 hover:text-gray-900">소개</a>
+                    <a href="destinations.html" class="text-gray-700 hover:text-gray-900">여행지</a>
+                    <a href="collections.html" class="text-gray-700 hover:text-gray-900">컬렉션</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="search.html" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="login.html" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="cart.html" class="text-gray-700 hover:text-gray-900 relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs cart-count">0</span>
+                    </a>
+                    <button class="md:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700">홈</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700">소개</a>
+                <a href="destinations.html" class="block px-3 py-2 text-gray-700">여행지</a>
+                <a href="collections.html" class="block px-3 py-2 text-gray-700">컬렉션</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 py-4">
+        <nav class="text-sm">
+            <a href="index.html" class="text-gray-600 hover:text-gray-900">홈</a>
+            <span class="mx-2">/</span>
+            <a href="paris.html" class="text-gray-600 hover:text-gray-900">파리</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900">파리지앵 트렌치코트</span>
+        </nav>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Product Images -->
+                <div>
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800" alt="Product" class="w-full h-[500px] object-cover">
+                        <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded">SALE -27%</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200" alt="Thumbnail" class="w-full h-24 object-cover rounded cursor-pointer border-2 border-gray-900" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=200" alt="Thumbnail" class="w-full h-24 object-cover rounded cursor-pointer hover:border-2 hover:border-gray-900" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=200" alt="Thumbnail" class="w-full h-24 object-cover rounded cursor-pointer hover:border-2 hover:border-gray-900" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=200" alt="Thumbnail" class="w-full h-24 object-cover rounded cursor-pointer hover:border-2 hover:border-gray-900" onclick="changeImage(this.src)">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <h1 class="text-3xl font-bold mb-2">파리지앵 트렌치코트</h1>
+                    <p class="text-gray-600 mb-4">클래식한 베이지 트렌치</p>
+
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600">(4.5/5, 127 리뷰)</span>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="text-3xl font-bold">₩189,000</span>
+                            <span class="text-xl text-gray-400 line-through">₩259,000</span>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-sm">27% OFF</span>
+                        </div>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-3">사이즈 선택</h3>
+                        <div class="flex gap-2">
+                            <button class="px-4 py-2 border rounded hover:border-gray-900 hover:bg-gray-900 hover:text-white transition">XS</button>
+                            <button class="px-4 py-2 border rounded hover:border-gray-900 hover:bg-gray-900 hover:text-white transition">S</button>
+                            <button class="px-4 py-2 border rounded bg-gray-900 text-white">M</button>
+                            <button class="px-4 py-2 border rounded hover:border-gray-900 hover:bg-gray-900 hover:text-white transition">L</button>
+                            <button class="px-4 py-2 border rounded hover:border-gray-900 hover:bg-gray-900 hover:text-white transition">XL</button>
+                        </div>
+                        <a href="#" class="text-sm text-blue-600 mt-2 inline-block">사이즈 가이드</a>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-3">색상 선택</h3>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-amber-200 border-2 border-gray-900"></button>
+                            <button class="w-8 h-8 rounded-full bg-gray-900 border-2 border-gray-300"></button>
+                            <button class="w-8 h-8 rounded-full bg-blue-900 border-2 border-gray-300"></button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-3">수량</h3>
+                        <div class="flex items-center gap-4">
+                            <button onclick="decreaseQuantity()" class="w-10 h-10 border rounded hover:bg-gray-100">-</button>
+                            <span id="quantity" class="text-lg">1</span>
+                            <button onclick="increaseQuantity()" class="w-10 h-10 border rounded hover:bg-gray-100">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4 mb-6">
+                        <button onclick="addToCart()" class="flex-1 bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-800 transition">
+                            장바구니 담기
+                        </button>
+                        <button class="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                            바로 구매
+                        </button>
+                        <button class="px-4 py-3 border rounded-lg hover:bg-gray-100">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="border-t pt-6">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-shipping-fast text-gray-600"></i>
+                                <span>무료 배송 (₩50,000 이상)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-undo text-gray-600"></i>
+                                <span>30일 반품 가능</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-shield-alt text-gray-600"></i>
+                                <span>정품 보증</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Description Tabs -->
+            <div class="mt-12">
+                <div class="border-b">
+                    <div class="flex gap-8">
+                        <button class="py-3 border-b-2 border-gray-900 font-semibold">상품 설명</button>
+                        <button class="py-3 text-gray-600 hover:text-gray-900">사이즈 정보</button>
+                        <button class="py-3 text-gray-600 hover:text-gray-900">배송 & 반품</button>
+                        <button class="py-3 text-gray-600 hover:text-gray-900">리뷰 (127)</button>
+                    </div>
+                </div>
+                <div class="py-8">
+                    <h3 class="text-xl font-semibold mb-4">상품 상세 정보</h3>
+                    <div class="prose max-w-none text-gray-600">
+                        <p class="mb-4">파리의 낭만적인 거리를 걷는 듯한 클래식한 트렌치코트입니다. 고급 면 소재로 제작되어 가볍고 편안하며, 방수 코팅으로 실용성까지 갖췄습니다.</p>
+                        <h4 class="font-semibold mb-2">특징:</h4>
+                        <ul class="list-disc pl-6 mb-4">
+                            <li>프리미엄 코튼 100%</li>
+                            <li>방수 코팅 처리</li>
+                            <li>클래식한 더블 브레스트 디자인</li>
+                            <li>허리 벨트 포함</li>
+                            <li>안감 처리로 보온성 강화</li>
+                        </ul>
+                        <h4 class="font-semibold mb-2">스타일링 팁:</h4>
+                        <p>에펠탑 앞에서의 인생샷은 물론, 몽마르뜨 언덕 산책이나 센강 크루즈까지 파리의 모든 순간에 어울리는 아이템입니다. 원피스나 청바지와 함께 다양하게 매치 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="mt-12">
+                <h2 class="text-2xl font-bold mb-6">함께 보면 좋은 상품</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-lg mb-3">
+                            <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400" alt="Related" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        </div>
+                        <h3 class="font-semibold text-sm mb-1">플로럴 미디 드레스</h3>
+                        <span class="text-lg font-bold">₩129,000</span>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-lg mb-3">
+                            <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400" alt="Related" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        </div>
+                        <h3 class="font-semibold text-sm mb-1">베레모 & 스카프 세트</h3>
+                        <span class="text-lg font-bold">₩49,000</span>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-lg mb-3">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400" alt="Related" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        </div>
+                        <h3 class="font-semibold text-sm mb-1">클래식 가죽 백</h3>
+                        <span class="text-lg font-bold">₩259,000</span>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-lg mb-3">
+                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400" alt="Related" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
+                        </div>
+                        <h3 class="font-semibold text-sm mb-1">레더 재킷</h3>
+                        <span class="text-lg font-bold">₩389,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-semibold mb-4">회사</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">회사 소개</a></li>
+                        <li><a href="careers.html" class="text-gray-400 hover:text-white">채용</a></li>
+                        <li><a href="press.html" class="text-gray-400 hover:text-white">프레스</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">고객 서비스</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">문의하기</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="shipping.html" class="text-gray-400 hover:text-white">배송 정보</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">소셜 미디어</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Voyage Vogue</h4>
+                    <p class="text-gray-400 text-sm">여행지에 어울리는 완벽한 스타일을 찾아보세요</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 Voyage Vogue. All rights reserved.</p>
+                <p class="text-sm mt-2">대표자: 이지민 | 사업자등록번호: 123-45-67890</p>
+                <p class="text-sm">개인정보보호 책임자: 전민성 | 이메일: privacy@voyagevogue.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

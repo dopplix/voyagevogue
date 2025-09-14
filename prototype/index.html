@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage Vogue - Travel Fashion Shopping</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gray-800">Voyage Vogue</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gray-900">홈</a>
+                    <a href="about.html" class="text-gray-700 hover:text-gray-900">소개</a>
+                    <a href="destinations.html" class="text-gray-700 hover:text-gray-900">여행지</a>
+                    <a href="collections.html" class="text-gray-700 hover:text-gray-900">컬렉션</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="search.html" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="login.html" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="cart.html" class="text-gray-700 hover:text-gray-900 relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs cart-count">0</span>
+                    </a>
+                    <button class="md:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700">홈</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700">소개</a>
+                <a href="destinations.html" class="block px-3 py-2 text-gray-700">여행지</a>
+                <a href="collections.html" class="block px-3 py-2 text-gray-700">컬렉션</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600" alt="Travel" class="w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white px-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Voyage Vogue</h1>
+                <p class="text-lg md:text-2xl mb-8">여행지에 어울리는 완벽한 스타일을 찾아보세요</p>
+                <a href="#destinations" class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                    여행지 둘러보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section id="destinations" class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">인기 여행지</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Paris -->
+                <a href="paris.html" class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 h-80">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Paris" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">파리</h3>
+                        <p class="text-sm">에펠탑과 함께하는 로맨틱한 스타일</p>
+                    </div>
+                </a>
+
+                <!-- Hawaii -->
+                <a href="hawaii.html" class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 h-80">
+                        <img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?w=800" alt="Hawaii" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">하와이</h3>
+                        <p class="text-sm">와이키키 해변의 트로피컬 무드</p>
+                    </div>
+                </a>
+
+                <!-- Tokyo -->
+                <a href="tokyo.html" class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 h-80">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800" alt="Tokyo" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">도쿄</h3>
+                        <p class="text-sm">시부야 거리의 스트릿 패션</p>
+                    </div>
+                </a>
+
+                <!-- LA -->
+                <a href="la.html" class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 h-80">
+                        <img src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=800" alt="LA" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">로스앤젤레스</h3>
+                        <p class="text-sm">할리우드의 셀럽 스타일</p>
+                    </div>
+                </a>
+
+                <!-- New York -->
+                <a href="newyork.html" class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 h-80">
+                        <img src="https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=800" alt="New York" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">뉴욕</h3>
+                        <p class="text-sm">맨해튼의 도시적인 시크함</p>
+                    </div>
+                </a>
+
+                <!-- London -->
+                <a href="london.html" class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 h-80">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800" alt="London" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">런던</h3>
+                        <p class="text-sm">빅벤과 함께하는 브리티시 스타일</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <i class="fas fa-globe text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">글로벌 배송</h3>
+                    <p class="text-gray-600">전 세계 어디든 빠르고 안전하게</p>
+                </div>
+                <div>
+                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">안전한 결제</h3>
+                    <p class="text-gray-600">다양한 결제 옵션과 보안</p>
+                </div>
+                <div>
+                    <i class="fas fa-undo text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">30일 반품</h3>
+                    <p class="text-gray-600">만족하지 않으면 반품 가능</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold mb-4">뉴스레터 구독</h2>
+            <p class="mb-8">최신 여행 패션 트렌드와 할인 정보를 받아보세요</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="이메일 주소" class="flex-1 px-4 py-3 rounded-lg text-gray-900">
+                <button type="submit" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition">구독하기</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-semibold mb-4">회사</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-600 hover:text-gray-900">회사 소개</a></li>
+                        <li><a href="careers.html" class="text-gray-600 hover:text-gray-900">채용</a></li>
+                        <li><a href="press.html" class="text-gray-600 hover:text-gray-900">프레스</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">고객 서비스</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-600 hover:text-gray-900">문의하기</a></li>
+                        <li><a href="faq.html" class="text-gray-600 hover:text-gray-900">FAQ</a></li>
+                        <li><a href="shipping.html" class="text-gray-600 hover:text-gray-900">배송 정보</a></li>
+                        <li><a href="returns.html" class="text-gray-600 hover:text-gray-900">반품 정책</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">소셜 미디어</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fab fa-pinterest text-2xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">결제 수단</h4>
+                    <div class="flex space-x-2">
+                        <i class="fab fa-cc-visa text-3xl text-gray-600"></i>
+                        <i class="fab fa-cc-mastercard text-3xl text-gray-600"></i>
+                        <i class="fab fa-cc-amex text-3xl text-gray-600"></i>
+                        <i class="fab fa-cc-paypal text-3xl text-gray-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t text-center text-gray-600">
+                <p>&copy; 2024 Voyage Vogue. All rights reserved.</p>
+                <p class="text-sm mt-2">대표자: 이지민 | 사업자등록번호: 123-45-67890</p>
+                <p class="text-sm">개인정보보호 책임자: 전민성 | 이메일: privacy@voyagevogue.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
